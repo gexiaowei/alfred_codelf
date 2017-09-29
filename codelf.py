@@ -3,6 +3,7 @@
 from __future__ import print_function
 import sys
 import requests
+import urllib
 from workflow import Workflow
 
 __author__ = "gexiaowei"
@@ -21,7 +22,9 @@ def code_lf(query):
 
 
 def main(wf):
-    code_lf(wf)
+    args = wf.args
+    keyword = urllib.quote_plus(args[0].encode('utf-8'))
+    code_lf(keyword)
 
 
 if __name__ == '__main__':

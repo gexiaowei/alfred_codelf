@@ -4,6 +4,7 @@ from __future__ import print_function
 import sys
 import requests
 import hashlib
+import urllib
 from workflow import Workflow
 
 __author__ = "gexiaowei"
@@ -27,7 +28,9 @@ def translate(query):
 
 
 def main(wf):
-    translate(wf)
+    args = wf.args
+    keyword = urllib.quote_plus(args[0].encode('utf-8'))
+    translate(keyword)
 
 
 if __name__ == '__main__':
