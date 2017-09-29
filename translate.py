@@ -1,7 +1,10 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
+from __future__ import print_function
+import sys
 import requests
 import hashlib
+from workflow import Workflow
 
 __author__ = "gexiaowei"
 __version__ = "1.0"
@@ -23,5 +26,11 @@ def translate(query):
     return response.text
 
 
+def main(wf):
+    translate(wf)
+
+
 if __name__ == '__main__':
-    translate('测试')
+    # code_lf('test')
+    wf = Workflow()
+    sys.exit(wf.run(main))

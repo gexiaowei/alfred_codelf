@@ -1,6 +1,5 @@
 #!/usr/bin/python
 #  -*- coding:utf-8 -*-
-
 from __future__ import print_function
 import sys
 import requests
@@ -21,5 +20,11 @@ def code_lf(query):
     return response.text
 
 
+def main(wf):
+    code_lf(wf)
+
+
 if __name__ == '__main__':
-    code_lf('test')
+    # code_lf('test')
+    wf = Workflow()
+    sys.exit(wf.run(main))
